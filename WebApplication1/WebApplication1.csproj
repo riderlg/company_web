@@ -591,6 +591,7 @@
     <Content Include="style\js\jNice.js" />
     <Content Include="style\js\jquery.js" />
     <Content Include="index.aspx" />
+    <Content Include="test\HtmlPage1.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -674,7 +675,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="images\" />
-    <Folder Include="test\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="logic\UserHandler.ashx" />
