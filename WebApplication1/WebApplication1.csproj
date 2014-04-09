@@ -674,6 +674,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="images\" />
+    <Folder Include="test\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="logic\UserHandler.ashx" />
