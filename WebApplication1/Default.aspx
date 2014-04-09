@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebApplication1._Default" %>
 
 <!DOCTYPE html>
-
 <html>
 <head id="Head1" runat="server">
     <title></title>
