@@ -539,6 +539,7 @@
                 })
             }
             LoadRecycleInfo();
+            LoadProduct()
         });
     </script>
 </body>
