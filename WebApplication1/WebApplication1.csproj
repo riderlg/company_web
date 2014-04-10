@@ -62,6 +62,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Announcement_Control.aspx" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\NLog.dll" />
+    <Content Include="bin\WebApplication1.dll" />
+    <Content Include="bin\WebApplication1.pdb" />
     <Content Include="css\style.css" />
     <Content Include="Default.aspx" />
     <Content Include="Message_Control.aspx" />
