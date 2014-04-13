@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WebApplication1
 {
-    public partial class ProductRoder_Control : System.Web.UI.Page
+    public partial class ProductRoder_Control : BasePage
     {
         public string CreateProductOrder()
         {

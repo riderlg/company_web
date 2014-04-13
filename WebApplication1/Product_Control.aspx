@@ -17,7 +17,7 @@
 </head>
     <body class="easyui-layout" >
         <div data-options="region:'west',collapsed:true,split:true,title:'&amp;nbsp;'" style="height:380px;width:150px;">
-            <table id="global_category" class="easyui-datagrid"  style="width:700px;width:140px;padding:2px"
+            <table id="global_category" class="easyui-datagrid"  style="width:700px;height:380px;padding:2px"
                 singleSelect="true">
             </table>
         </div>
