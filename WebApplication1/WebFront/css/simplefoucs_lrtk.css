@@ -1,0 +1,59 @@
+﻿
+img
+{
+	border: 0px;
+}
+.bannerbox
+{
+	width: 1440px;
+	height: 387px;
+	overflow: hidden;
+	margin: 0px auto;
+}
+#focus
+{
+	width: 1440px;
+	height: 387px;
+	clear: both;
+	overflow: hidden;
+	position: relative;
+	float: left;
+}
+#focus ul
+{
+	width: 1440px;
+	height: 387px;
+	float: left;
+	position: absolute;
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+#focus ul li
+{
+	float: left;
+	width: 1440px;
+	height: 387px;
+	overflow: hidden;
+	position: relative;
+	padding: 0px;
+	margin: 0px;
+}
+#focus .preNext
+{
+	width: 550px;
+	height: 387px;
+	position: absolute;
+	top: 0px;
+	cursor: pointer;
+}
+#focus .pre
+{
+	left: 0;
+	background: url(../img/sprite.png) no-repeat left center;
+}
+#focus .next
+{
+	right: 0;
+	background: url(../img/sprite1.png) no-repeat right center;
+}

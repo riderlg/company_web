@@ -67,7 +67,7 @@
     <Content Include="bin\WebApplication1.dll" />
     <Content Include="bin\WebApplication1.pdb" />
     <Content Include="css\style.css" />
-    <Content Include="Default.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="Message_Control.aspx" />
     <Content Include="jquery-easyui-1.3.4\changelog.txt" />
     <Content Include="jquery-easyui-1.3.4\demo\accordion\actions.html" />
@@ -596,6 +596,60 @@
     <Content Include="style\js\jquery.js" />
     <Content Include="index.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WebFront\css\base.css" />
+    <Content Include="WebFront\css\cn.css" />
+    <Content Include="WebFront\css\css.css" />
+    <Content Include="WebFront\css\simplefoucs_lrtk.css" />
+    <Content Include="WebFront\Default.aspx" />
+    <Content Include="WebFront\img\b2_20.jpg" />
+    <Content Include="WebFront\img\bmy.png" />
+    <Content Include="WebFront\img\bott_26.jpg" />
+    <Content Include="WebFront\img\by14.jpg" />
+    <Content Include="WebFront\img\byq.png" />
+    <Content Include="WebFront\img\bywq.png" />
+    <Content Include="WebFront\img\by_02.jpg" />
+    <Content Include="WebFront\img\by_04.jpg" />
+    <Content Include="WebFront\img\by_07.jpg" />
+    <Content Include="WebFront\img\by_10.jpg" />
+    <Content Include="WebFront\img\by_101.jpg" />
+    <Content Include="WebFront\img\by_102.jpg" />
+    <Content Include="WebFront\img\by_12.jpg" />
+    <Content Include="WebFront\img\by_14.jpg" />
+    <Content Include="WebFront\img\by_17.jpg" />
+    <Content Include="WebFront\img\by_20.jpg" />
+    <Content Include="WebFront\img\by_21.jpg" />
+    <Content Include="WebFront\img\by_24.jpg" />
+    <Content Include="WebFront\img\by_27.jpg" />
+    <Content Include="WebFront\img\hw_000505.gif" />
+    <Content Include="WebFront\img\hw_000506.gif" />
+    <Content Include="WebFront\img\jd_28.jpg" />
+    <Content Include="WebFront\img\p06.jpg" />
+    <Content Include="WebFront\img\p3.jpg" />
+    <Content Include="WebFront\img\rr2_18.jpg" />
+    <Content Include="WebFront\img\sprite.png" />
+    <Content Include="WebFront\img\sprite1.png" />
+    <Content Include="WebFront\img\tt2_03.jpg" />
+    <Content Include="WebFront\img\tt2_05.jpg" />
+    <Content Include="WebFront\img\tt2_08.jpg" />
+    <Content Include="WebFront\img\ty3.jpg" />
+    <Content Include="WebFront\img\v2_03.jpg" />
+    <Content Include="WebFront\img\v2_04.jpg" />
+    <Content Include="WebFront\img\xin_08.jpg" />
+    <Content Include="WebFront\img\xin_10.jpg" />
+    <Content Include="WebFront\img\xin_11.jpg" />
+    <Content Include="WebFront\img\xin_12.jpg" />
+    <Content Include="WebFront\img\xin_15.jpg" />
+    <Content Include="WebFront\img\xin_17.jpg" />
+    <Content Include="WebFront\img\xin_22.jpg" />
+    <Content Include="WebFront\js\cn.global.js" />
+    <Content Include="WebFront\js\cn.index.js" />
+    <Content Include="WebFront\js\infomer.js" />
+    <Content Include="WebFront\js\jianjie.htm" />
+    <Content Include="WebFront\js\jquery.js" />
+    <Content Include="WebFront\js\simplefoucs.js" />
+    <Content Include="WebFront\js\zhaopin.htm" />
+    <Content Include="WebFront\Prouduct.aspx" />
+    <Content Include="WebFront\swf\chanpin.htm" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="logic\AnnouncementHandler.ashx.cs">
@@ -613,12 +667,12 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="App_Code\SqlHelper.cs" />
-    <Compile Include="Default.aspx.cs">
+    <Compile Include="Login.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
-      <DependentUpon>Default.aspx</DependentUpon>
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="logic\MessageHandler.ashx.cs">
       <DependentUpon>MessageHandler.ashx</DependentUpon>
@@ -674,6 +728,20 @@
     <Compile Include="logic\UserHandler.ashx.cs">
       <DependentUpon>UserHandler.ashx</DependentUpon>
     </Compile>
+    <Compile Include="WebFront\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFront\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFront\Prouduct.aspx.cs">
+      <DependentUpon>Prouduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFront\Prouduct.aspx.designer.cs">
+      <DependentUpon>Prouduct.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -717,6 +785,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="WebFront\img\Thumbs.db" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

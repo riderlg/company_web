@@ -27,7 +27,7 @@ namespace WebApplication1
             BaseContext.Session["UserName"] = null;
             BaseContext.Session.Clear();
             BaseContext.Session.Abandon();
-            BaseContext.Response.Redirect("../Default.aspx");
+            BaseContext.Response.Redirect("../Login.aspx");
         }
 
 

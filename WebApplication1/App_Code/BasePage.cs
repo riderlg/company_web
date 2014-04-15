@@ -12,7 +12,7 @@ namespace WebApplication1
         {
             if (Session["UserName"] == null)
             {
-                Response.Write("<script language='javascript'>window.top.location.href='Default.aspx'</script>");
+                Response.Write("<script language='javascript'>window.top.location.href='Login.aspx'</script>");
                 Response.End();
             }
         }
