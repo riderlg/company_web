@@ -648,6 +648,7 @@
     <Content Include="WebFront\js\jquery.js" />
     <Content Include="WebFront\js\simplefoucs.js" />
     <Content Include="WebFront\js\zhaopin.htm" />
+    <Content Include="WebFront\ProductInfo.aspx" />
     <Content Include="WebFront\Prouduct.aspx" />
     <Content Include="WebFront\swf\chanpin.htm" />
   </ItemGroup>
@@ -734,6 +735,13 @@
     </Compile>
     <Compile Include="WebFront\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFront\ProductInfo.aspx.cs">
+      <DependentUpon>ProductInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFront\ProductInfo.aspx.designer.cs">
+      <DependentUpon>ProductInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFront\Prouduct.aspx.cs">
       <DependentUpon>Prouduct.aspx</DependentUpon>

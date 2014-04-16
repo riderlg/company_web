@@ -11,7 +11,6 @@
 
     <script src="js/jquery.js" type="text/javascript"></script>
 
-    <script src="js/cn.global.js" type="text/javascript"></script>
 
     <link href="css/base.css" rel="stylesheet" type="text/css" />
     <link href="css/cn.css" rel="stylesheet" type="text/css" />
@@ -42,7 +41,7 @@
         <div class="banner cl">
             <ul>
                 <li>
-                    <img src="img/by_07.jpg" /></li><li><a href="index.htm">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li><li>
+                    <img src="img/by_07.jpg" /></li><li><a href="Default.aspx">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li><li>
                         <img src="img/by_07.jpg" /></li><li><a href="jianjie.htm">关于百易</a></li><li>
                             <img src="img/by_07.jpg" /></li><li><a href="Prouduct.aspx">产品中心</a></li><li>
                                 <img src="img/by_07.jpg" /></li><li><a href="fuwu.htm">联系我们</a></li><li>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Prouduct.aspx.cs" Inherits="WebApplication1.WebFront.Prouduct" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProductInfo.aspx.cs" Inherits="WebApplication1.WebFront.ProductInfo" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -143,14 +143,17 @@
             </div>
             <div class="zallr fl">
                 <div class="zallrtops cl">
-                    <strong>E时代安全电子邮件系统v2.0</strong><a name="c" id="c"></a>
+                    <strong><%=productName %></strong><a name="c" id="c"></a>
                 </div>
                 <div class="zallrcon chanpinh cl">
                     <p>
                         <strong>产品概述</strong>
                     </p>
+                    <div>
+                        <img src="<%=productImg %>" width="175" height="100" alt="" />
+                    </div>
                     <p>
-                        “E时代安全电子邮件系统V2.0”是武汉百易时代信息技术有限公司自主研发的一套领先的安全电子邮件解决方案。在实现传统电子邮件系统功能的同时，以邮件经过的网络系统安全性为基础，综合运用加密技术、邮件收发的审批机制，三员（系统管理员、安全管理员、安全审计员）之间相互制约的关系，建立"三权分立"制度。来对用户涉密邮件的投递进行有效地监控，更有效地确保了邮件系统的安全性，为安全保密单位提供了一整套深度定制的网络通信安全解决方案。
+                        <%=productInfo %>
                     </p>
                 </div>
             </div>
@@ -174,4 +177,3 @@
 </form>
 </body>
 </html>
-

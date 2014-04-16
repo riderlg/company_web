@@ -10,7 +10,7 @@
 namespace WebApplication1.WebFront {
     
     
-    public partial class Prouduct {
+    public partial class ProductInfo {
         
         /// <summary>
         /// form1 控件。
