@@ -596,11 +596,14 @@
     <Content Include="style\js\jquery.js" />
     <Content Include="index.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WebFront\ASCX\foot.ascx" />
+    <Content Include="WebFront\ASCX\header.ascx" />
     <Content Include="WebFront\css\base.css" />
     <Content Include="WebFront\css\cn.css" />
     <Content Include="WebFront\css\css.css" />
     <Content Include="WebFront\css\simplefoucs_lrtk.css" />
     <Content Include="WebFront\Default.aspx" />
+    <Content Include="WebFront\gonggao.aspx" />
     <Content Include="WebFront\img\b2_20.jpg" />
     <Content Include="WebFront\img\bmy.png" />
     <Content Include="WebFront\img\bott_26.jpg" />
@@ -641,6 +644,7 @@
     <Content Include="WebFront\img\xin_15.jpg" />
     <Content Include="WebFront\img\xin_17.jpg" />
     <Content Include="WebFront\img\xin_22.jpg" />
+    <Content Include="WebFront\jianjie.aspx" />
     <Content Include="WebFront\js\cn.global.js" />
     <Content Include="WebFront\js\cn.index.js" />
     <Content Include="WebFront\js\infomer.js" />
@@ -649,8 +653,10 @@
     <Content Include="WebFront\js\simplefoucs.js" />
     <Content Include="WebFront\js\zhaopin.htm" />
     <Content Include="WebFront\ProductInfo.aspx" />
-    <Content Include="WebFront\Prouduct.aspx" />
+    <Content Include="WebFront\Product.aspx" />
     <Content Include="WebFront\swf\chanpin.htm" />
+    <Content Include="WebFront\xinwen.aspx" />
+    <Content Include="WebFront\zhaopin.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="logic\AnnouncementHandler.ashx.cs">
@@ -729,12 +735,40 @@
     <Compile Include="logic\UserHandler.ashx.cs">
       <DependentUpon>UserHandler.ashx</DependentUpon>
     </Compile>
+    <Compile Include="WebFront\ASCX\foot.ascx.cs">
+      <DependentUpon>foot.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFront\ASCX\foot.ascx.designer.cs">
+      <DependentUpon>foot.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFront\ASCX\header.ascx.cs">
+      <DependentUpon>header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFront\ASCX\header.ascx.designer.cs">
+      <DependentUpon>header.ascx</DependentUpon>
+    </Compile>
     <Compile Include="WebFront\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebFront\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFront\gonggao.aspx.cs">
+      <DependentUpon>gonggao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFront\gonggao.aspx.designer.cs">
+      <DependentUpon>gonggao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFront\jianjie.aspx.cs">
+      <DependentUpon>jianjie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFront\jianjie.aspx.designer.cs">
+      <DependentUpon>jianjie.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFront\ProductInfo.aspx.cs">
       <DependentUpon>ProductInfo.aspx</DependentUpon>
@@ -743,12 +777,26 @@
     <Compile Include="WebFront\ProductInfo.aspx.designer.cs">
       <DependentUpon>ProductInfo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebFront\Prouduct.aspx.cs">
-      <DependentUpon>Prouduct.aspx</DependentUpon>
+    <Compile Include="WebFront\Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebFront\Prouduct.aspx.designer.cs">
-      <DependentUpon>Prouduct.aspx</DependentUpon>
+    <Compile Include="WebFront\Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFront\xinwen.aspx.cs">
+      <DependentUpon>xinwen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFront\xinwen.aspx.designer.cs">
+      <DependentUpon>xinwen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFront\zhaopin.aspx.cs">
+      <DependentUpon>zhaopin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFront\zhaopin.aspx.designer.cs">
+      <DependentUpon>zhaopin.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

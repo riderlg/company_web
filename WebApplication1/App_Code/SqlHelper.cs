@@ -7,7 +7,6 @@ using System.Collections;
 namespace WebApplication1
 {
     /// <summary>
-    /// 数据库的通用访问代码 苏飞修改
     /// 此类为抽象类，
     /// 不允许实例化，在应用时直接调用即可
     /// </summary>
