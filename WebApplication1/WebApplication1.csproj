@@ -653,7 +653,6 @@
     <Content Include="WebFront\js\simplefoucs.js" />
     <Content Include="WebFront\js\zhaopin.htm" />
     <Content Include="WebFront\ProductInfo.aspx" />
-    <Content Include="WebFront\Product.aspx" />
     <Content Include="WebFront\swf\chanpin.htm" />
     <Content Include="WebFront\xinwen.aspx" />
     <Content Include="WebFront\zhaopin.aspx" />
@@ -776,13 +775,6 @@
     </Compile>
     <Compile Include="WebFront\ProductInfo.aspx.designer.cs">
       <DependentUpon>ProductInfo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebFront\Product.aspx.cs">
-      <DependentUpon>Product.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebFront\Product.aspx.designer.cs">
-      <DependentUpon>Product.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFront\xinwen.aspx.cs">
       <DependentUpon>xinwen.aspx</DependentUpon>
