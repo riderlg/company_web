@@ -43,7 +43,7 @@ namespace WebApplication1
             }
         }
 
-        public void AddMessage()
+        public void LeaveMessage()
         {
             JObject json = new JObject(
                         new JProperty("state", "ok"),
