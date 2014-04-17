@@ -29,7 +29,7 @@
                 <div class="zcontlcon cl">
                     <p>
                         <img class="fl" src="img/by_17.jpg" /><strong>武汉百易时代信息技术有限公司</strong>（简称百易时代）位于武汉中心城-光谷。百易时代作为一个集研发、销售、服务为一体的规范化IT企业，拥有一批由高级软件工程师为核心的专业团队，全方位满足客户需求，为客户提供更及时、更便捷、更高效的技术服务支持。<br />
-                        <a class="contsx" href="Profiles.htm">+更多</a>
+                        <a class="contsx" href="jianjie.aspx">+更多</a>
                     </p>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                     <img src="img/b2_20.jpg" class="cl" />
                     <p>
                         <strong>“E时代安全电子邮件系统V2.0”</strong>是武汉百易时代信息技术有限公司自主研发的一套领先的安全电子邮件解决方案。在实现传统电子邮件系统功能的同时以邮件经过的网络系统安全性为基础，综合运用加密技术
-                        、邮件收发的审批机制，三员（系统管理员... <a class="contsx" href="chanpin.htm">+更多</a>
+                        、邮件收发的审批机制，三员（系统管理员... <a class="contsx" href="Product.aspx">+更多</a>
                     </p>
                 </div>
             </div>

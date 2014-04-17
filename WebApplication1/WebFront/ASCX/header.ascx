@@ -23,7 +23,7 @@
                     <img src="/WebFront/img/by_07.jpg" /></li><li><a href="/WebFront/Default.aspx">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li><li>
                         <img src="/WebFront/img/by_07.jpg" /></li><li><a href="/WebFront/jianjie.aspx">关于百易</a></li><li>
                             <img src="/WebFront/img/by_07.jpg" /></li><li><a href="/WebFront/Product.aspx">产品中心</a></li><li>
-                                <img src="/WebFront/img/by_07.jpg" /></li><li><a href="/WebFront/fuwu.htm">联系我们</a></li><li>
+                                <img src="/WebFront/img/by_07.jpg" /></li><li><a href="/WebFront/ContactUs.aspx">联系我们</a></li><li>
                                     <img src="/WebFront/img/by_07.jpg" /></li><li><a href="/WebFront/zhaopin.aspx">招贤纳士</a></li>
                 <li>
                     <img src="/WebFront/img/by_07.jpg" /></li>
