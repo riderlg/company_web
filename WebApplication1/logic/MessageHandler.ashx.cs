@@ -51,7 +51,6 @@ namespace WebApplication1
                     );
             try
             {
-                var UID = BaseContext.Request["UID"];
                 SqlParameter[] p = {
                     new SqlParameter("@datetime", BaseContext.Request["datetime"]),
                     new SqlParameter("@email", BaseContext.Request["email"]),
