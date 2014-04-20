@@ -1,0 +1,61 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace WebApplication1.WebFront
+{
+    public partial class ProductOrder : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            rptRootUnit.DataSource = GetRootUnit();
+            rptRootUnit.DataBind();
+        }
+       
+
+        protected void repeater_ItemDataBind(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.AlternatingItem ||
+                                   e.Item.ItemType == ListItemType.Item)
+            {
+                Repeater rpt = (Repeater)e.Item.FindControl("rptSubUnit");
+                if (rpt != null && e.Item.DataItem != null)
+                {
+
+                    //获取父部门ID
+                    DataRow itemRow = (e.Item.DataItem as DataRowView).Row;
+
+                    rpt.DataSource = GetSubUnits(Convert.ToInt32(itemRow["UID"]));
+                    rpt.DataBind();
+                }
+            }
+        }
+
+        //获取数据库
+        private DataTable GetRootUnit()
+        {
+            return GetDataFromDB("select * from pro_category");
+        }
+
+        private DataTable GetSubUnits(int unitID)
+        {
+            return GetDataFromDB("select * from product where categoryUID = " + unitID);
+        }
+
+        private DataTable GetDataFromDB(string query)
+        {
+            DataTable table = new DataTable();
+            string strConn = System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
+            SqlConnection conn = new SqlConnection(strConn);
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(table);
+            return table;
+        }
+    }
+}

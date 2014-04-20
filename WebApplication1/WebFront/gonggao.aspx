@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="gonggao.aspx.cs" Inherits="WebApplication1.WebFront.gonggao" %>
-
 <%@ Register Src="ASCX/header.ascx" TagName="header" TagPrefix="uc1" %>
+<%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -40,10 +40,33 @@
             </div>
             <div class="zallr fl">
                 <div class="zallrtop cl">
-                    <a id="j" name="j"></a><strong>公司公告</strong>
+                    <a id="j" name="j"></a><strong>公司新闻</strong>
                 </div>
                 <div class="zallrcon jianjieh cl">
-                    
+                    <!--公告列表-->
+                <div class="news-main">
+                    <div class="news-title">
+                        <span class="date">日期</span><span class="xulie">序列</span><span >公告</span></div>
+                    <div class="news-txt">
+                        <ul>
+                            <asp:Repeater ID="NewsPost" runat="server">
+                                <ItemTemplate>
+                                    <li><span class="time">
+                                        <%#string.Format("{0:d}", Eval("datetime"))%>
+                                    </span><span class="number">
+                                        <%#Container.ItemIndex+1%></span><a href="NewsInfo.aspx?type=0&ID=<%#Eval("UID").ToString()%>"><%#Eval("msg").ToString()%></a></li>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </ul>
+                    </div>
+                    <div class="news-botton">
+                        <webdiyer:AspNetPager ID="AspNetPager2" CssClass="paginator" runat="server" PageSize="15"
+                            AlwaysShow="True" FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PrevPageText="上一页"
+                            ShowCustomInfoSection="Left" ShowPageIndexBox="always" PageIndexBoxType="DropDownList"
+                            UrlPaging="true" OnPageChanged="AspNetPager2_PageChanged" CurrentPageButtonClass="cpb">
+                        </webdiyer:AspNetPager>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
