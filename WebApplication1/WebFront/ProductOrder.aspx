@@ -103,8 +103,37 @@
                 <div class="zallrtops cl">
                     <strong>产品订单</strong><a name="c" id="c"></a>
                 </div>
-                <div class="zallrcon chanpinh cl">
-                    
+                <div class="zallrcon chanpinh cl" id="ProductForm">
+                        <table style="margin:0 auto;width:220">
+                        <tr  class="row_height">
+                            <td><a>订单号:</a></td>
+                            <td><p id="order_num"></p> </td>
+                        </tr>
+                        <tr  class="row_height">
+                            <td><a>客户姓名:</a></td>
+                            <td><input   id="name" ></input></td>
+                        </tr>
+                        <tr  class="row_height">
+                            <td><a>预定产品:</a></td>
+                            <td><input class="easyui-combobox"  id="product_uid"  data-options="valueField:'id',textField:'text'"></input></td>
+                        </tr>
+                        <tr  class="row_height">
+                            <td><a>产品数量:</a></td>
+                            <td><input class="easyui-numberbox"   id="product_amount"  data-options="min:0,max:10000,precision:0" ></input></td>
+                        </tr>
+                        <tr  class="row_height">
+                            <td><a>邮箱:</a></td>
+                            <td><input   id="email" ></input></td>
+                        </tr>
+                        <tr  class="row_height">
+                            <td><a>电话:</a></td>
+                            <td><input   id="telephone" ></input></td>
+                        </tr>
+                        <tr class="row_height">
+                            <td colspan="2" id="error" style="text-align:center;color:red;font:100"></td>
+                        </tr>
+                        </table>
+                        <a href="javascript:void(0)" onclick="AddProductOrder()">提交订单</a>
                 </div>
             </div>
         </div>
@@ -121,6 +150,73 @@
 
 
     <script type="text/javascript">
+
+
+        function timeStamp2String(time) {
+            var datetime = new Date();
+            // datetime.setTime(time); 
+            var year = datetime.getFullYear();
+            var month = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
+            var date = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
+            var hour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
+            var minute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
+            var second = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
+            return year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second;
+        }
+
+
+        function LoadProduct()
+        {
+            $.ajax({
+                type: "POST",
+                url: "/logic/ProductHandler.ashx",
+                async: false,
+                data: "method=GetProductName",
+                success: function (data) {
+                    var jdata = $.parseJSON(data);
+                    $("#ProductForm #product_uid").combobox({
+                        data: jdata
+                    });
+                }
+            });
+        }
+        LoadProduct();
+        function AddProductOrder(){
+            var datetime = timeStamp2String();
+            var order_num = $("#ProductForm #order_num").html();
+            var name = $("#ProductForm #order_num").val();
+            var telephone = $("#ProductForm #order_num").val();
+            var email = $("#ProductForm #email").val();
+            var num = $("#ProductForm #email").val();
+            var product_UID = $("#ProductForm #product_uid").combobox('getValue');
+            if (order_num.length == 0 || name.length == 0 || telephone.length == 0 ||
+                email.length == 0 || product_UID.length == 0) {
+                $("#ProductForm #error").html("输入不能空");
+                return;
+            }
+            $.ajax({
+                type: "POST",
+                url: "/logic/ProductOrderHandler.ashx",
+                async: false,
+                dataType: "json",
+                data: "method=AddProductOrder&order_num=" + order_num +
+                    "&datetime=" + datetime +
+                    "&name=" + name +
+                    "&telephone=" + telephone +
+                    "&email=" + email +
+                    "&product_UID=" + product_UID +
+                    "&product_amount=" + num,
+                success: function (data) {
+                    if (data.state == "error") {
+                        alert("订单提交失败.");
+                    }
+                    else {
+                        alert("订单提交成功。您的订单号为：" + order_num + "，我们会尽快处理您的订单。");
+                    }
+                }
+            })
+        }
+
         var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
         document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa8b8e34c421c3648d83f5c5e91ae98b7' type='text/javascript'%3E%3C/script%3E"));
     </script>

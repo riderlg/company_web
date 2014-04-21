@@ -166,7 +166,41 @@ namespace WebApplication1
             }
         }
 
-   
+        public void GetProductName()
+        {
+            JArray data = new JArray();
+            try
+            {
+                String strSql = "SELECT UID,name  FROM [dbo].[product]";
+                SqlDataReader sdr = SqlHelper.ExecuteReader(CommandType.Text, strSql);
+                bool first = true;
+                while (sdr.Read())
+                {
+                    if (first)
+                    {
+                        //"selected":true,
+                        data.Add(new JObject(
+                            new JProperty("id", sdr["UID"].ToString()),
+                            new JProperty("text", sdr["name"].ToString()),
+                            new JProperty("selected", true)
+                            ));
+                        first = false;
+                        continue;
+                    }
+                    data.Add(new JObject(
+                             new JProperty("id", sdr["UID"].ToString()),
+                             new JProperty("text", sdr["name"].ToString())
+                             ));
+                }
+                BaseContext.Response.Clear();
+                BaseContext.Response.Write(data.ToString());
+            }
+            catch (System.Exception ex)
+            {
+                Log.Error(ex);
+                BaseContext.Response.Write(data.ToString());
+            }
+        }
 
         public void LoadCategory()
         {
