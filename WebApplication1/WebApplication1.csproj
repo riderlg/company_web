@@ -66,7 +66,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Announcement_Control.aspx" />
-    <Content Include="bin\AspNetPager.dll" />
     <Content Include="bin\Newtonsoft.Json.dll" />
     <Content Include="bin\NLog.dll" />
     <Content Include="bin\WebApplication1.dll" />
