@@ -11,7 +11,7 @@ namespace WebApplication1.WebFront
 {
     public partial class ProductOrder : System.Web.UI.Page
     {
-
+        
         public static string GetOrderNumber()
         {
             string Number = DateTime.Now.ToString("yyMMddHHmmss");//yyyyMMddHHmmssms

@@ -83,6 +83,10 @@ namespace WebApplication1
                        );
             try
             {
+                String strSql = "INSERT INTO [dbo].[pro_order] (" +
+                "datetime, order_num, name,product_UID,telephone,email,product_amount,status) VALUES (" +
+                "@datetime, @order_num, @name,@product_UID,@telephone, @email, @product_amount, @status)";
+             
                 SqlParameter[] p = {
                     new SqlParameter("@datetime", BaseContext.Request["datetime"]),
                     new SqlParameter("@order_num", BaseContext.Request["order_num"]),
@@ -91,9 +95,9 @@ namespace WebApplication1
                     new SqlParameter("@telephone", BaseContext.Request["telephone"]),
                     new SqlParameter("@email", BaseContext.Request["email"]),
                     new SqlParameter("@product_amount", BaseContext.Request["product_amount"]),
-                    new SqlParameter("@status", 0)
+                    new SqlParameter("@status", Convert.ToInt32(0))
                  };
-                SqlHelper.ExecteNonQuery(CommandType.StoredProcedure, "ADD_PRO_ORDER", p);
+                SqlHelper.ExecteNonQuery(CommandType.Text, strSql, p);
                 BaseContext.Response.Write(json);
             }
             catch (System.Exception ex)

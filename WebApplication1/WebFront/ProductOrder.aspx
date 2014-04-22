@@ -41,7 +41,6 @@
             color: #f00;
         }
          </style>
-    
     <title>武汉百易时代信息技术有限公司</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
@@ -59,6 +58,91 @@
     <link href="css/cn.css" rel="stylesheet" type="text/css" />
     <link href="css/css.css" rel="stylesheet" type="text/css" />
     <link href="Css/cn.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+			body{
+				font-family: "宋体",Arial;
+				font-size: 12px;
+			}
+			/*居中*/
+			#ProductForm{
+				width: 550px;
+				border: dotted 2px #cde;
+				margin: 0 auto;
+				padding: 10px;
+			}
+			#ProductForm tr{
+				height: 30px;
+				line-height: 30px;
+			}
+
+			#ProductForm td.tdLeft{
+				width: 180px;
+				text-align: right;
+				padding-right: 15px;
+				color: #069;
+			}
+
+			#ProductForm td.tdRight{
+				width: 350px;
+			}
+
+			#ProductForm input.vldset {
+				border-style: solid;
+				border-width: 1px;
+				border-radius: 3px;
+				height: 21px;
+				line-height: 21px;
+				width: 160px;
+			}
+
+			#ProductForm button{
+				color: #fff;				
+				border-radius: 3px;				
+				width: 80px;
+				height: 30px;
+				line-height: 28px;
+				letter-spacing: 5px;
+				margin-left: 35px;
+			}
+			.remark{
+				color: red;
+				margin: 0 3px;				
+			}
+			.error_tip{
+				color: #f00;
+				margin-left: 5px;
+				font-size: 11px;
+			}
+			
+			/*重新定义下拉框样式*/
+			.easyui-combobox
+			{
+			    width: 156px;			    			    
+			}
+			#ProductForm .combo
+			{
+			    border: solid 1px RGB(78, 189, 251);
+			    line-height: 21px;
+			    height: 21px;
+			    border-radius: 3px;
+			}
+			input.normal{
+				border-color: RGB(78, 189, 251);
+			}
+			input.invalid{
+				border-color: RGB(236, 90, 75);
+			}
+			button.normal{
+				background-color: RGB(78, 189, 251);
+				border: solid 1px RGB(60, 191, 249);
+				cursor: pointer;
+			}
+			button.disabled{
+				background-color: #9999A1;
+				border: solid 1px RGB(235, 235, 235);
+				cursor: default;
+			}			
+		</style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -103,37 +187,52 @@
                 <div class="zallrtops cl">
                     <strong>产品订单</strong><a name="c" id="c"></a>
                 </div>
-                <div class="zallrcon chanpinh cl" id="ProductForm">
-                        <table style="margin:0 auto;width:220">
-                        <tr  class="row_height">
-                            <td><a>订单号:</a></td>
-                            <td><p id="order_num"></p> </td>
-                        </tr>
-                        <tr  class="row_height">
-                            <td><a>客户姓名:</a></td>
-                            <td><input   id="name" ></input></td>
-                        </tr>
-                        <tr  class="row_height">
-                            <td><a>预定产品:</a></td>
-                            <td><input class="easyui-combobox"  id="product_uid"  data-options="valueField:'id',textField:'text'"></input></td>
-                        </tr>
-                        <tr  class="row_height">
-                            <td><a>产品数量:</a></td>
-                            <td><input class="easyui-numberbox"   id="product_amount"  data-options="min:0,max:10000,precision:0" ></input></td>
-                        </tr>
-                        <tr  class="row_height">
-                            <td><a>邮箱:</a></td>
-                            <td><input   id="email" ></input></td>
-                        </tr>
-                        <tr  class="row_height">
-                            <td><a>电话:</a></td>
-                            <td><input   id="telephone" ></input></td>
-                        </tr>
-                        <tr class="row_height">
-                            <td colspan="2" id="error" style="text-align:center;color:red;font:100"></td>
-                        </tr>
-                        </table>
-                        <a href="javascript:void(0)" onclick="AddProductOrder()">提交订单</a>
+                <div class="zallrcon chanpinh cl">
+                    <div id="ProductForm">
+			            <table>
+				            <tr>
+					            <td class="tdLeft">
+						            <span class="remark">*</span>客户姓名：</td>
+					            <td class="tdRight">						
+						            <input id="name" type="text" class="normal vldset" />
+						            <span class="error_tip"></span>
+					            </td>
+				            </tr>
+                            <tr>
+                                <td class="tdLeft">预定产品:</td>
+                                <td><input class="easyui-combobox"  id="product_uid"  data-options="valueField:'id',textField:'text'" /></td>
+                                <td class="error_tip"></td>
+                            </tr>
+				            <tr>
+					            <td class="tdLeft">
+						            <span class="remark">*</span>产品数量：</td>
+					            <td class="tdRight">
+						            <input id="product_amount" type="text" class="normal vldset"/>
+						            <span class="error_tip"></span>
+					            </td>
+				            </tr>
+				            <tr>
+					            <td class="tdLeft">
+						            <span class="remark">*</span>邮箱：</td>
+					            <td class="tdRight">
+						            <input id="email" type="text" class="normal vldset"/>
+						            <span class="error_tip"></span>
+					            </td>
+				            </tr>
+				            <tr>
+					            <td class="tdLeft">
+						            <span class="remark">*</span>电话：</td>
+					            <td class="tdRight">
+						            <input id="telephone" type="text" class="normal vldset"/>
+						            <span class="error_tip"></span>
+					            </td>
+				            </tr>
+				            <tr>
+					            <td></td>
+					            <td><button id="btnSubmitOrder">提交</button></td>
+				            </tr>
+			            </table>
+		            </div>
                 </div>
             </div>
         </div>
@@ -147,6 +246,131 @@
     <noscript>
         <iframe src="*.htm"></iframe>
     </noscript>
+
+<script type="text/javascript">
+    $(function () {
+        //未填写表单，禁用按钮
+        setButtonStatus();
+
+        //表单验证
+        $("input.vldset").bind({
+            blur: function () {
+                var thisEL = $(this);
+                var posIndex = thisEL.index(".vldset");
+                var inputValue = thisEL.val();
+
+                var checkedResult = true;
+                if (inputValue.length == 0) {
+                    makeInvalid(thisEL, "输入不能为空!");
+                    checkedResult = false;
+                }
+
+                // 对应索引的正则来判断输入内容的合法与否
+                var checker = validator[posIndex];
+                if (checkedResult && checker.regex.test(inputValue) == false) {
+                    makeInvalid(thisEL, checker.invalidText);
+                    checkedResult = false;
+                }
+
+                checkedArray[posIndex] = checkedResult;
+                if (checkedResult == false) {
+                    //更改按钮状态
+                    setButtonStatus(null, false);
+                }
+                else {
+                    clearInalid(thisEL);
+                    //更改按钮状态
+                    setButtonStatus();
+                }
+                return checkedResult;
+            },
+            keypress: function (evtObj) {
+                var charCode = evtObj.which;
+                switch (this.id) {
+                    case "productAmount":
+                    case "telephone":
+                        if (charCode < 48 || charCode > 58)
+                            return false;
+                        break;
+                }
+            }
+        });
+
+        //提交表单
+        $("#btnSubmitOrder").click(function () {
+            // 根据按钮的状态，不用再次执行表单验证
+            if (this.className.indexOf("disabled") == -1) {
+                var datetime = timeStamp2String();
+                var order_num = "<%=GetOrderNumber() %>";
+                var name = $("#ProductForm #name").val();
+                 var telephone = $("#ProductForm #telephone").val();
+                 var email = $("#ProductForm #email").val();
+                 var num = $("#ProductForm #product_amount").val();
+                 var product_UID = $("#ProductForm #product_uid").combobox('getValue');
+                 if (order_num.length == 0 || name.length == 0 || telephone.length == 0 ||
+                     email.length == 0 || product_UID.length == 0) {
+                     return;
+                 }
+                 $("#ProductForm #error").closest("tr").hide();
+                 $.ajax({
+                     type: "POST",
+                     url: "/logic/ProductOrderHandler.ashx",
+                     async: false,
+                     dataType: "json",
+                     data: "method=AddProductOrder&order_num=" + order_num +
+                         "&datetime=" + datetime +
+                         "&name=" + name +
+                         "&telephone=" + telephone +
+                         "&email=" + email +
+                         "&product_UID=" + product_UID +
+                         "&product_amount=" + num,
+                     success: function (data) {
+                         if (data.state == "error") {
+                             alert("订单提交失败.");
+                         }
+                         else {
+                             alert("订单提交成功。您的订单号为：" + order_num + "，我们会尽快处理您的订单。");
+                         }
+                     }
+                 })
+            }
+            else {
+                return false;
+            }
+        });
+    });
+
+    //每个输入项的验证状态： 未输入数据，默认不合法
+    var checkedArray = [false, false, false, false];
+
+    //表单验证规则
+    var validator = [
+    { type: "name", regex: /^\w{2,10}$/i, invalidText: "姓名长度限定为5-10个字符!" }, //验证用户名
+    { type: "amount", regex: /^[1-9]\d?$/, invalidText: "产品数量允许范围为1-99!" }, //验证产品数量
+    { type: "email", regex: /^[a-z0-9]{2,20}@[a-z0-9]{2,10}.[a-z0-9]{2,4}/i, invalidText: "邮箱格式为aaaaa@163.com!" }, //验证邮箱
+    { type: "telephone", regex: /^[1-9]\d{10}$/, invalidText: "电话为手机号，限定11个数字!" } //验证电话
+    ];
+
+    //输入框的状态
+    function makeInvalid(inputEL, message) {
+        inputEL.removeClass("normal").addClass("invalid").next(".error_tip").html(message);
+    }
+    function clearInalid(inputEL) {
+        inputEL.removeClass("invalid").addClass("normal").next(".error_tip").html("");
+    }
+
+    //按钮状态
+    function setButtonStatus(buttonEL, status) {
+        buttonEL = buttonEL || $("#btnSubmitOrder");
+        status = status || checkedArray.join(",").indexOf("false") == -1;
+        if (status) {
+            buttonEL.removeClass("disabled").addClass("normal");
+        }
+        else {
+            buttonEL.removeClass("normal").addClass("disabled");
+        }
+    }
+</script>
 
 
     <script type="text/javascript">
@@ -165,8 +389,7 @@
         }
 
 
-        function LoadProduct()
-        {
+        function LoadProduct() {
             $.ajax({
                 type: "POST",
                 url: "/logic/ProductHandler.ashx",
@@ -181,41 +404,7 @@
             });
         }
         LoadProduct();
-        function AddProductOrder(){
-            var datetime = timeStamp2String();
-            var order_num = $("#ProductForm #order_num").html();
-            var name = $("#ProductForm #order_num").val();
-            var telephone = $("#ProductForm #order_num").val();
-            var email = $("#ProductForm #email").val();
-            var num = $("#ProductForm #email").val();
-            var product_UID = $("#ProductForm #product_uid").combobox('getValue');
-            if (order_num.length == 0 || name.length == 0 || telephone.length == 0 ||
-                email.length == 0 || product_UID.length == 0) {
-                $("#ProductForm #error").html("输入不能空");
-                return;
-            }
-            $.ajax({
-                type: "POST",
-                url: "/logic/ProductOrderHandler.ashx",
-                async: false,
-                dataType: "json",
-                data: "method=AddProductOrder&order_num=" + order_num +
-                    "&datetime=" + datetime +
-                    "&name=" + name +
-                    "&telephone=" + telephone +
-                    "&email=" + email +
-                    "&product_UID=" + product_UID +
-                    "&product_amount=" + num,
-                success: function (data) {
-                    if (data.state == "error") {
-                        alert("订单提交失败.");
-                    }
-                    else {
-                        alert("订单提交成功。您的订单号为：" + order_num + "，我们会尽快处理您的订单。");
-                    }
-                }
-            })
-        }
+  
 
         var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
         document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa8b8e34c421c3648d83f5c5e91ae98b7' type='text/javascript'%3E%3C/script%3E"));
