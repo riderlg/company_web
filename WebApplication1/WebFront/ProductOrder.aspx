@@ -344,11 +344,11 @@
     var checkedArray = [false, false, false, false];
 
     //表单验证规则
-    var validator = [
+    var validator = [   
     { type: "name", regex: /^\w{2,10}$/i, invalidText: "姓名长度限定为5-10个字符!" }, //验证用户名
     { type: "amount", regex: /^[1-9]\d?$/, invalidText: "产品数量允许范围为1-99!" }, //验证产品数量
-    { type: "email", regex: /^[a-z0-9]{2,20}@[a-z0-9]{2,10}.[a-z0-9]{2,4}/i, invalidText: "邮箱格式为aaaaa@163.com!" }, //验证邮箱
-    { type: "telephone", regex: /^[1-9]\d{10}$/, invalidText: "电话为手机号，限定11个数字!" } //验证电话
+    { type: "email", regex: /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/, invalidText: "邮箱格式为aaaaa@163.com!" }, //验证邮箱
+    { type: "telephone", regex: /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/, invalidText: "请输入正确格式的手机号码!" } //验证电话
     ];
 
     //输入框的状态
