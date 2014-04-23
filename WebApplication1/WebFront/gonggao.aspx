@@ -16,6 +16,19 @@
     <link href="css/cn.css" rel="stylesheet" type="text/css" />
     <link href="css/css.css" rel="stylesheet" type="text/css" />
     <link href="Css/cn.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        /*******新闻中心********/
+        .news-main { width:600px;}
+        .news-title { width:600px; height:22px; line-height:22px; color:#fff; background:#005b9e; margin-top:25px; }
+        .news-txt { border-bottom:#005b9e solid 2px; padding-bottom:1px;}
+        .news-title .date { float:right; padding-right:30px; color:#fff; font-weight:bold;}
+        .news-title .xulie { border-right:#fff solid 1px; padding:0 15px 0 20px; font-weight:bold; color:#fff;}
+        .news-title .title { padding-left:15px; font-weight:bold; color:#fff;}
+        .news-txt li { line-height:35px; border-bottom: solid 1px #c4c4c4; position:relative; padding-left:80px; width:643px;}
+        .news-txt li .time { float:right; color:#666; padding-right:10px;}
+        .news-txt li .number { position:absolute; left:30px; top:0; }
+        .news-botton { text-align:center; margin:26px 0;}
+    </style>
 </head>
 <body>
     <!--头部-->
