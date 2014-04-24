@@ -31,7 +31,7 @@ namespace WebApplication1.WebFront
             }
 
 
-            // this.AspNetPager2.RecordCount = dt.Rows.Count;
+            this.AspNetPager2.RecordCount = GetCount();
             this.NewsPost.DataSource = GetNews(page);
             this.NewsPost.DataBind();
 
@@ -56,6 +56,17 @@ namespace WebApplication1.WebFront
         {
             String sqlStr = "select top " + AspNetPager2.PageSize + " * from announcement where status = 1 and UID not in (select top " + AspNetPager2.PageSize * (page - 1) + " UID from announcement where status = 1 order by datetime DESC) order by datetime DESC ";
             return GetDataFromDB(sqlStr);
+        }
+
+
+        private int GetCount()
+        {
+            int counte;
+            String sqlStr = "select COUNT(*) from announcement where status = 1";
+            string strConn = System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
+            SqlConnection conn = new SqlConnection(strConn);
+            counte = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, sqlStr, null));
+            return counte;
         }
 
 
