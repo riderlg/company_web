@@ -17,6 +17,94 @@
     <link href="css/cn.css" rel="stylesheet" type="text/css" />
     <link href="css/css.css" rel="stylesheet" type="text/css" />
     <link href="Css/cn.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .list_data ul {
+			overflow: hidden;
+			width: 580px;
+			margin: 10px auto;
+			padding: 5px;
+		}
+
+		.list_data a{
+			color: #0086E3;
+			text-decoration: none;
+		}
+		.list_data a:hover{
+			color: #FFB95A;
+			text-decoration: none;
+		}
+
+		.list_data ul li:first-child {
+			margin: 0 0 10px 0;
+		}
+
+		.list_data ul li.unit{
+			list-style: none;
+			padding: 0 10px 10px 0;
+			border-bottom: dotted 1px #ccc;
+		}
+
+		.unit .n_top{
+			border-left: solid 5px #0086E3;
+			padding: 0 0 5px 10px;
+		}
+
+		.unit .n_top h1.n_title{
+			margin: 0px;
+			padding: 5px 0;
+			font-size: 18px;
+			font-weight: bolder;
+		}
+
+		.unit .n_top span{
+			margin: 0;
+			display: block;
+			color: #999;
+		}
+
+		.list_data .n_body{
+			margin: 3px;
+			padding: 0 10px;
+		}
+
+		.list_data .n_body > div img{
+			float: left;
+			width: 180px;
+		}
+
+		.list_data .n_body p {
+			text-indent: 2em;
+			color: #666;
+			max-height: 150px;
+			overflow: hidden;
+			font-size: 16px;
+			line-height: 22px;
+			margin: 0px;
+		}
+
+		.list_data .n_footer{
+			clear: both;
+		}
+
+		.list_data .n_footer span.view_all{
+			display: block;
+			width: 100%;	
+			text-align: right;
+		}
+
+		.list_data .pages{
+			position: relative;
+			float: left;
+			clear: both;
+			width: 100%;
+			text-align: center;
+			margin: 5px;
+		}
+
+		.pages a{
+			color: #000;
+		}
+    </style>
 </head>
 <body>
     <!--头部-->
@@ -45,28 +133,38 @@
                 </div>
                 <div class="zallrcon jianjieh cl">
                     <!--新闻列表-->
-                <div class="news-main">
-                    <div class="news-title">
-                        <span class="date">日期</span><span class="xulie">序列</span><span class="title">标题</span></div>
-                    <div class="news-txt">
+                    <div class="list_data">
                         <ul>
                             <asp:Repeater ID="NewsPost" runat="server">
                                 <ItemTemplate>
-                                    <li><span class="time">
-                                        <%#string.Format("{0:d}", Eval("datetime"))%>
-                                    </span><span class="number">
-                                        <%#Container.ItemIndex+1%></span><a href="NewsInfo.aspx?type=1&ID=<%#Eval("UID").ToString()%>"><%#Eval("title").ToString()%></a></li>
+                                    <li class="unit">
+                                        <div class="n_top">                                            
+							                <h1 class="n_title">
+                                                <a href='NewsInfo.aspx?type=1&ID=<%#Eval("UID").ToString()%>'><%#Eval("title").ToString()%></a>
+                                            </h1>
+							                <span class="time_ago">发布时间：<%#string.Format("{0:yyyy-MM-dd HH:mm:ss}", Eval("datetime"))%></span>
+						                </div>                                        
+                                        <div class="n_body">	
+							                <p>
+								               <%#Eval("msg").ToString()%>
+							                </p>
+						                </div>
+						                <div class="n_footer">
+							                <span class="view_all"><a href='NewsInfo.aspx?type=1&ID=<%#Eval("UID").ToString()%>'>查看全文</a></span>
+						                </div>
+                                    </li>
                                 </ItemTemplate>
                             </asp:Repeater>
                         </ul>
+                        <div class="pages">
+                            <webdiyer:AspNetPager ID="AspNetPager2" CssClass="paginator" runat="server" PageSize="15"
+                                AlwaysShow="True" FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PrevPageText="上一页"
+                                ShowCustomInfoSection="Left" ShowPageIndexBox="always" PageIndexBoxType="DropDownList"
+                                UrlPaging="true" OnPageChanged="AspNetPager2_PageChanged" CurrentPageButtonClass="cpb">
+                            </webdiyer:AspNetPager>
+                        </div>
                     </div>
-                    <div class="news-botton">
-                        <webdiyer:AspNetPager ID="AspNetPager2" CssClass="paginator" runat="server" PageSize="15"
-                            AlwaysShow="True" FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PrevPageText="上一页"
-                            ShowCustomInfoSection="Left" ShowPageIndexBox="always" PageIndexBoxType="DropDownList"
-                            UrlPaging="true" OnPageChanged="AspNetPager2_PageChanged" CurrentPageButtonClass="cpb">
-                        </webdiyer:AspNetPager>
-                    </div>
+                    
                 </div>
                 </div>
             </div>

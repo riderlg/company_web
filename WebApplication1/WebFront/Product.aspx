@@ -40,6 +40,26 @@
             margin: 30px 0 0 30px;
             color: #f00;
         }
+        
+        .fixed_box{
+	        width:35px;
+	        height:100px;
+	        line-height:20px;
+	        background:url('../images/box_bg.jpg') no-repeat right center; 
+	        position:fixed;
+	        right:-5px;
+	        top:300px;
+	        font-size:16px;
+	        color:#009B00;
+	        font-weight:bolder; 
+	        text-align:center;
+	        vertical-align:middle;
+        }
+
+        .fixed_box span{
+	        display:inline-block;
+	        margin:10px 5px 5px 8px;	        
+        }
          </style>
     
     <title>武汉百易时代信息技术有限公司</title>
@@ -113,6 +133,8 @@
             </div>
         </div>
     </div>
+     <div class="fixed_box"><a href="/WebFront/ProductOrder.aspx"><span>提交订单</span></a></div>
+
     <div class="bottom cl">
         <div class="botcon cl">
             Copyright © 2010-2013 Baiyi Times. All Rights Reserved. 武汉百易时代信息技术有限公司 版权所有<br />

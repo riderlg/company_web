@@ -72,6 +72,7 @@
     <Content Include="bin\WebApplication1.dll" />
     <Content Include="bin\WebApplication1.pdb" />
     <Content Include="css\style.css" />
+    <Content Include="images\box_bg.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="Message_Control.aspx" />
     <Content Include="jquery-easyui-1.3.4\changelog.txt" />
@@ -830,7 +831,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="logic\UserHandler.ashx" />

@@ -17,17 +17,107 @@
     <link href="css/css.css" rel="stylesheet" type="text/css" />
     <link href="Css/cn.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
-        /*******新闻中心********/
-        .news-main { width:600px;}
-        .news-title { width:600px; height:22px; line-height:22px; color:#fff; background:#005b9e; margin-top:25px; }
-        .news-txt { border-bottom:#005b9e solid 2px; padding-bottom:1px;}
-        .news-title .date { float:right; padding-right:30px; color:#fff; font-weight:bold;}
-        .news-title .xulie { border-right:#fff solid 1px; padding:0 15px 0 20px; font-weight:bold; color:#fff;}
-        .news-title .title { padding-left:15px; font-weight:bold; color:#fff;}
-        .news-txt li { line-height:35px; border-bottom: solid 1px #c4c4c4; position:relative; padding-left:80px; width:643px;}
-        .news-txt li .time { float:right; color:#666; padding-right:10px;}
-        .news-txt li .number { position:absolute; left:30px; top:0; }
-        .news-botton { text-align:center; margin:26px 0;}
+        .list_data ul {
+			overflow: hidden;
+			width: 580px;
+			margin: 10px auto;
+			padding: 5px;
+		}
+
+		.list_data a{
+			color: #0086E3;
+			text-decoration: none;
+		}
+		.list_data a:hover{
+			color: #FFB95A;
+			text-decoration: none;
+		}
+
+		.list_data ul li:first-child {
+			margin: 0 0 10px 0;
+		}
+
+		.list_data ul li.unit{
+			list-style: none;
+			padding: 0 10px 10px 0;
+			border-bottom: dotted 1px #ccc;
+		}
+
+		.unit .n_top{
+			/*border-left: solid 5px #0086E3;*/
+			padding: 0 0 5px 10px;
+		}
+
+		.unit .n_top h1.n_title{
+			margin: 0px;
+			padding: 5px 0;
+			font-size: 18px;
+			font-weight: bolder;
+		}
+
+		.unit .n_top span{
+			margin: 0;
+			display: block;
+			color: #999;
+			font-size: 13px;
+		}
+		
+		.unit .n_top span em
+		{
+		    padding: 8px 12px;
+		    font-style: normal;
+		    width: 20px;
+		    height: 20px;
+		    line-height: 20px;
+		    text-align: center;
+		    background-color: #cde;
+		    border-radius: 5px;
+		    overflow: hidden;
+		    color: #E7483E;
+		}
+
+		.list_data .n_body{
+			margin: 3px;
+			padding: 0 10px;
+		}
+
+		.list_data .n_body > div img{
+			float: left;
+			width: 180px;
+		}
+
+		.list_data .n_body p {
+			text-indent: 2em;
+			color: #666;
+			max-height: 150px;
+			overflow: hidden;
+			font-size: 16px;
+			line-height: 22px;
+			margin: 0px;
+		}
+
+		.list_data .n_footer{
+			clear: both;
+		}
+
+		.list_data .n_footer span.view_all{
+			display: block;
+			width: 100%;	
+			text-align: right;
+		}
+
+		.list_data .pages{
+			position: relative;
+			float: left;
+			clear: both;
+			width: 100%;
+			text-align: center;
+			margin: 5px;
+		}
+
+		.pages a{
+			color: #000;
+		}
     </style>
 </head>
 <body>
@@ -53,26 +143,31 @@
             </div>
             <div class="zallr fl">
                 <div class="zallrtop cl">
-                    <a id="j" name="j"></a><strong>公司新闻</strong>
+                    <a id="j" name="j"></a><strong>公司公告</strong>
                 </div>
                 <div class="zallrcon jianjieh cl">
                     <!--公告列表-->
-                <div class="news-main">
-                    <div class="news-title">
-                        <span class="date">日期</span><span class="xulie">序列</span><span >公告</span></div>
-                    <div class="news-txt">
-                        <ul>
-                            <asp:Repeater ID="NewsPost" runat="server">
-                                <ItemTemplate>
-                                    <li><span class="time">
-                                        <%#string.Format("{0:d}", Eval("datetime"))%>
-                                    </span><span class="number">
-                                        <%#Container.ItemIndex+1%></span><a href="NewsInfo.aspx?type=0&ID=<%#Eval("UID").ToString()%>"><%#Eval("msg").ToString()%></a></li>
-                                </ItemTemplate>
-                            </asp:Repeater>
-                        </ul>
-                    </div>
-                    <div class="news-botton">
+                <div class="list_data">
+                    <ul>
+                        <asp:Repeater ID="NewsPost" runat="server">
+                            <ItemTemplate>                            
+                                <li class="unit">
+                                    <div class="n_top">
+							            <span><em><%#Container.ItemIndex+1%></em> 发布时间：<%#string.Format("{0:yyyy-MM-dd HH:mm:ss}", Eval("datetime"))%></span>
+						            </div>                                        
+                                    <div class="n_body">	
+							            <p>
+								            <%#Eval("msg").ToString()%>
+							            </p>
+						            </div>
+						            <div class="n_footer">
+							            <span class="view_all"><a href='NewsInfo.aspx?type=0&ID=<%#Eval("UID").ToString()%>'>查看全文</a></span>
+						            </div>
+                                </li>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </ul>
+                    <div class="pages">
                         <webdiyer:AspNetPager ID="AspNetPager2" CssClass="paginator" runat="server" PageSize="15"
                             AlwaysShow="True" FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PrevPageText="上一页"
                             ShowCustomInfoSection="Left" ShowPageIndexBox="always" PageIndexBoxType="DropDownList"
